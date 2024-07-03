@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز الجلسات - لقمة وشاي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>لقمة وشاي</h1>
+        <h2>نظام حجز الجلسات</h2>
+        <form id="bookingForm">
+            <label for="sessionNumber">رقم الجلسة:</label>
+            <select id="sessionNumber">
+                <!-- Regular sessions -->
+                <option value="1">جلسة 1</option>
+                <option value="2">جلسة 2</option>
+                <option value="3">جلسة 3</option>
+                <option value="4">جلسة 4</option>
+                <option value="5">جلسة 5</option>
+                <option value="6">جلسة 6</option>
+                <option value="7">جلسة 7</option>
+                <option value="8">جلسة 8</option>
+                <option value="9">جلسة 9</option>
+                <option value="10">جلسة 10</option>
+                <option value="11">جلسة 11</option>
+                <option value="12">جلسة 12</option>
+                <option value="13">جلسة 13</option>
+                <option value="14">جلسة 14</option>
+                <option value="15">جلسة 15</option>
+                <option value="16">جلسة 16</option>
+                <option value="17">جلسة 17</option>
+                <option value="18">جلسة 18</option>
+                <option value="19">جلسة 19</option>
+                <option value="20">جلسة 20</option>
+                <!-- Special sessions -->
+                <option value="21">جلسة خاصة 1</option>
+                <option value="22">جلسة خاصة 2</option>
+                <option value="23">جلسة خاصة 3</option>
+            </select>
+            <label for="rentalTime">مدة الإيجار (بالدقائق):</label>
+            <input type="number" id="rentalTime" min="1" required>
+            <button type="submit">بدء الجلسة</button>
+        </form>
+        <div id="notifications"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
