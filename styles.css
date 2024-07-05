@@ -67,7 +67,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-#notifications {
+#notifications, #session-records {
     margin-top: 20px;
     text-align: left;
     width: 100%;
@@ -90,4 +90,19 @@ button:hover {
 .session div {
     font-size: 16px;
     color: #555;
+}
+
+.session button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.session button:hover {
+    background-color: #c82333;
 }
