@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="pin-container">
+        <h1>لقمة وشاي</h1>
+        <h2>أدخل الرمز للدخول</h2>
+        <input type="password" id="pin-input" placeholder="أدخل الرمز">
+        <button id="pin-button">دخول</button>
+    </div>
+    <div class="container" id="main-container" style="display: none;">
         <h1>لقمة وشاي</h1>
         <h2>نظام حجز الجلسات</h2>
         <form id="bookingForm">
@@ -45,6 +51,8 @@
             <button type="submit">بدء الجلسة</button>
         </form>
         <div id="notifications"></div>
+        <h2>سجلات الجلسات المنتهية</h2>
+        <div id="session-records"></div>
     </div>
     <script src="script.js"></script>
 </body>
