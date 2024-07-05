@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام حجز الجلسات - لقمة وشاي</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
     <div class="container" id="pin-container">
@@ -17,6 +18,8 @@
         <h1>لقمة وشاي</h1>
         <h2>نظام حجز الجلسات</h2>
         <form id="bookingForm">
+            <label for="customerName">اسم الزبون:</label>
+            <input type="text" id="customerName" required>
             <label for="sessionNumber">رقم الجلسة:</label>
             <select id="sessionNumber">
                 <!-- Regular sessions -->
@@ -52,6 +55,8 @@
         <div id="notifications"></div>
         <h2>سجلات الجلسات المنتهية</h2>
         <div id="session-records"></div>
+        <button id="saveButton">حفظ البيانات</button>
+        <button id="loadButton">تحميل البيانات</button>
     </div>
     <script src="script.js"></script>
 </body>
