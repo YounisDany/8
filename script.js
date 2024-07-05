@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (distance < 0) {
                 clearInterval(countdownInterval);
                 document.getElementById(`countdown-${sessionNumber}`).innerHTML = "انتهى الوقت!";
-                alert(`${sessionName} انتهى وقتهم.`);
                 const audio = new Audio('buzzer.mp3');
                 audio.play();
                 if ('speechSynthesis' in window) {
@@ -68,4 +67,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         updateCountdown(); // الاستدعاء الأولي لإظهار العد التنازلي فوراً
-        const countdownInterval
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // إضافة وظائف تعديل الوقت وإلغاء الجلسة
+        window.extendSession = function(sessionNumber) {
+            const additionalTime = prompt("أدخل الوقت الإضافي بالدقائق:");
+            if (additionalTime) {
+                const additionalTimeMs = parseInt(additionalTime, 10) * 60000;
+                endTime += additionalTimeMs;
+                alert(`تم إضافة ${additionalTime} دقيقة إلى الجلسة ${sessionNumber}.`);
+            }
+        };
+
+        window.cancelSession = function(sessionNumber) {
+            const confirmCancel = confirm("هل أنت متأكد من إلغاء الجلسة؟");
+            if (confirmCancel) {
+                clearInterval(countdownInterval);
+                document.getElementById('notifications').removeChild(document.getElementById(`session-${sessionNumber}`));
+                alert(`تم إلغاء الجلسة ${sessionNumber}.`);
+            }
+        };
+    });
+});
